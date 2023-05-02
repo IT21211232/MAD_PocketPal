@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">PocketPal</string>
+    <string name="expenses">Expenses</string>
+    <string name="total">Total</string>
+    <string name="rs">Rs.</string>
+    <string name="add_expenses">Add Expenses</string>
+    <string name="add_expense_page_message">Add amount and select category</string>
+    <string name="enter_amount">Enter the amount</string>
+    <string name="enter_new_amount">Enter the new amount</string>
+    <string name="update_expense">Update Expense</string>
+    <string-array name="expense_categories">
+        <item>Food</item>
+        <item>Clothing</item>
+        <item>Car</item>
+        <item>Transport</item>
+        <item>Entertainment</item>
+        <item>House</item>
+        <item>Other</item>
+    </string-array>
 </resources>
