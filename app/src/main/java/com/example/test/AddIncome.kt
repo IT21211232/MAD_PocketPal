@@ -64,6 +64,10 @@ class AddIncome : AppCompatActivity() {
                 incomeAmount.error = "Amount not entered"
                 return@setOnClickListener
             }
+            if (inputAmount == "0") {
+                incomeAmount.error = "Amount cannot be zero"
+                return@setOnClickListener
+            }
 
             /* store amount and category in firebase */
             val incomeId = dbRef.push().key!!
