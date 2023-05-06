@@ -64,21 +64,26 @@ class AddExpenses : AppCompatActivity() {
         //getting the values from the edittext
         val expAmt = etExpenseAmt.text.toString()
         val expCat = categoryTextDisplay.text.toString()
-
+        /*Checks if the value entered is null. The value will be added only if the value is not null*/
         if(expAmt.isEmpty()){
             etExpenseAmt.error="Please Enter the Amount"
         }
-        val expenseId = dbRef.push().key!!
+        else if(expAmt == "0"){
+            etExpenseAmt.error="Amount cannot be zero"
+        }
+        else{
+            val expenseId = dbRef.push().key!!
 
-        val expense = ExpenseModel(expenseId, expAmt, expCat)
+            val expense = ExpenseModel(expenseId, expAmt, expCat)
 
-        dbRef.child(expenseId).setValue(expense)
-            .addOnCompleteListener{
-                Toast.makeText(this, "Expense Inserted Successfully!", Toast.LENGTH_LONG).show()
-                etExpenseAmt.text.clear()
-            }.addOnFailureListener{ err ->
-                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
-            }
+            dbRef.child(expenseId).setValue(expense)
+                .addOnCompleteListener{
+                    Toast.makeText(this, "Expense Inserted Successfully!", Toast.LENGTH_LONG).show()
+                    etExpenseAmt.text.clear()
+                }.addOnFailureListener{ err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                }
+        }
 
     }
 }
