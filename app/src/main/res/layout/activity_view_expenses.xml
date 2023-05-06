@@ -37,11 +37,11 @@
         android:textColor="#fff"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/backArrow"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/backArrow"
         android:layout_width="33dp"
         android:layout_height="35dp"
         android:layout_marginStart="20dp"

@@ -10,4 +10,7 @@
     <color name="default_grey">#FF656565</color>
     <color name="expense_red">#D34D4D</color>
 
+    <color name="income_green">#009688</color>
+    <color name="color_delete">#EA4E4E</color>
+
 </resources>
