@@ -4,7 +4,7 @@ package com.example.test
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import com.example.test.IncomeValidator.validateIncomeInput
+import com.example.test.testValidations.IncomeValidator.validateIncomeInput
 import com.google.common.truth.Truth.assertThat
 
 
