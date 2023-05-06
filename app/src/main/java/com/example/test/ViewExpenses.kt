@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,9 @@ class ViewExpenses : AppCompatActivity() {
     private lateinit var dbRef: DatabaseReference
     private var totalExpenses: Double = 0.0
     private lateinit var totalAmount : TextView
+    /* --- back button --- */
+    private lateinit var backButton: ImageView
+    /*back button*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +34,14 @@ class ViewExpenses : AppCompatActivity() {
         expensesLoad = findViewById(R.id.expensesLoading)
         expRecyclerView.layoutManager = LinearLayoutManager(this)
         expRecyclerView.setHasFixedSize(true)
+        /* --- back button --- */
         totalAmount = findViewById(R.id.expenseAmount)
+        backButton = findViewById(R.id.backArrow)
+        backButton.setOnClickListener{
+            val intent = Intent(this,Dashboard::class.java);
+            startActivity(intent);
+        }
+        /*back button*/
 
         expList = arrayListOf<ExpenseModel>()
 
