@@ -5,23 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg2"
-    tools:context=".UpdateExpenses">
+    tools:context=".UpdateIncome">
 
     <Button
-        android:id="@+id/updateExpenseBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="648dp"
-        android:backgroundTint="@color/expense_red"
-        android:text="@string/update_expense"
-        android:textColor="@color/white"
+        android:id="@+id/btnUpdateIncome"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="330dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/update_income"
+        android:textColor="@color/income_green"
+        android:textColorLink="@color/income_green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:strokeColor="@color/income_green"
+        app:strokeWidth="3dp" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/editNewIncomeText"
         android:layout_width="303dp"
         android:layout_height="81dp"
         android:layout_marginTop="328dp"
@@ -48,11 +52,26 @@
         app:srcCompat="@drawable/pocketpal__4__removebg_preview" />
 
     <TextView
-        android:id="@+id/expenseUpAmt"
+        android:id="@+id/incomeCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="196dp"
+
+        android:layout_marginTop="156dp"
+        android:text="Salary"
+        android:textColor="@color/income_green"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/newIncomeAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="224dp"
         android:text="320"
         android:textColor="@color/default_grey"
         android:textSize="32sp"
@@ -64,71 +83,60 @@
         android:id="@+id/currency2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="224dp"
         android:text="@string/rs"
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/updateAmount"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/updateAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="196dp"
-        android:text="@string/total"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="224dp"
+        android:text="@string/amount"
         android:textColor="@color/default_grey"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/expenseUpCat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="156dp"
-        android:text="Food"
-        android:textColor="@color/expense_red"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/logoImg5"
-        android:layout_width="85dp"
-        android:layout_height="104dp"
+        android:id="@+id/logoImg4"
+        android:layout_width="95dp"
+        android:layout_height="106dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/expenses"
-        android:textColor="#fff"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/logo2" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/backArrow"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="43dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/income"
+        android:textColor="#fff"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/backArrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

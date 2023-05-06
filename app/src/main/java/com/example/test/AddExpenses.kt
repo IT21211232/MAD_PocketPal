@@ -1,5 +1,6 @@
 package com.example.test
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,6 +17,10 @@ class AddExpenses : AppCompatActivity() {
     private lateinit var etExpenseAmt : EditText
     private lateinit var addExpenseBtn : Button
     private lateinit var categoryTextDisplay : TextView
+    /* --- back button --- */
+    private lateinit var backButton: ImageView
+    /*back button*/
+
     /*Initializing the database reference*/
     private lateinit var dbRef: DatabaseReference
 
@@ -28,6 +33,13 @@ class AddExpenses : AppCompatActivity() {
         addExpenseBtn = findViewById(R.id.addExpenseBtn2)
         categoryTextDisplay = findViewById(R.id.expenseCategoryDisplay)
         dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
+        /* --- back button --- */
+        backButton = findViewById(R.id.imageView)
+        backButton.setOnClickListener{
+            val intent = Intent(this,Dashboard::class.java);
+            startActivity(intent);
+        }
+        /*back button*/
 
         val addExpense = findViewById<Button>(R.id.addExpenseBtn2);
         addExpense.setOnClickListener{
@@ -64,21 +76,26 @@ class AddExpenses : AppCompatActivity() {
         //getting the values from the edittext
         val expAmt = etExpenseAmt.text.toString()
         val expCat = categoryTextDisplay.text.toString()
-
+        /*Checks if the value entered is null. The value will be added only if the value is not null*/
         if(expAmt.isEmpty()){
             etExpenseAmt.error="Please Enter the Amount"
         }
-        val expenseId = dbRef.push().key!!
+        else if(expAmt == "0"){
+            etExpenseAmt.error="Amount cannot be zero"
+        }
+        else{
+            val expenseId = dbRef.push().key!!
 
-        val expense = ExpenseModel(expenseId, expAmt, expCat)
+            val expense = ExpenseModel(expenseId, expAmt, expCat)
 
-        dbRef.child(expenseId).setValue(expense)
-            .addOnCompleteListener{
-                Toast.makeText(this, "Expense Inserted Successfully!", Toast.LENGTH_LONG).show()
-                etExpenseAmt.text.clear()
-            }.addOnFailureListener{ err ->
-                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
-            }
+            dbRef.child(expenseId).setValue(expense)
+                .addOnCompleteListener{
+                    Toast.makeText(this, "Expense Inserted Successfully!", Toast.LENGTH_LONG).show()
+                    etExpenseAmt.text.clear()
+                }.addOnFailureListener{ err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                }
+        }
 
     }
 }

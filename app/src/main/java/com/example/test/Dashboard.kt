@@ -23,5 +23,12 @@ class Dashboard : AppCompatActivity() {
             val Intent = Intent(this,Savings::class.java);
             startActivity(Intent);
         }
+
+        val viewIncome = findViewById<Button>(R.id.ViewIncome);
+        viewIncome.setOnClickListener{
+
+            val intent = Intent(this,ViewIncome::class.java);
+            startActivity(intent);
+        }
     }
 }
