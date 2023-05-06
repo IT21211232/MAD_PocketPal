@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.test.testValidations
 
 object IncomeValidator {
     fun validateIncomeInput(income: Int, incomeCategory: String): Boolean {
