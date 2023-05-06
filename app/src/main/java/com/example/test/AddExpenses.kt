@@ -1,5 +1,6 @@
 package com.example.test
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,6 +17,10 @@ class AddExpenses : AppCompatActivity() {
     private lateinit var etExpenseAmt : EditText
     private lateinit var addExpenseBtn : Button
     private lateinit var categoryTextDisplay : TextView
+    /* --- back button --- */
+    private lateinit var backButton: ImageView
+    /*back button*/
+
     /*Initializing the database reference*/
     private lateinit var dbRef: DatabaseReference
 
@@ -28,6 +33,13 @@ class AddExpenses : AppCompatActivity() {
         addExpenseBtn = findViewById(R.id.addExpenseBtn2)
         categoryTextDisplay = findViewById(R.id.expenseCategoryDisplay)
         dbRef = FirebaseDatabase.getInstance().getReference("Expenses")
+        /* --- back button --- */
+        backButton = findViewById(R.id.imageView)
+        backButton.setOnClickListener{
+            val intent = Intent(this,Dashboard::class.java);
+            startActivity(intent);
+        }
+        /*back button*/
 
         val addExpense = findViewById<Button>(R.id.addExpenseBtn2);
         addExpense.setOnClickListener{
