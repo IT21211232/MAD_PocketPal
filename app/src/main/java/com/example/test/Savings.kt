@@ -29,8 +29,8 @@ class Savings : AppCompatActivity() {
     private lateinit var tvSavingPrice:TextView
     private lateinit var savingsList:ArrayList<SavingsModel>
     private lateinit var dbRef:DatabaseReference
-    private lateinit var btnSavUpdate:Button
-    private lateinit var btnSavDelete:Button
+    private var totalSavings: Double = 0.00
+
 
 
     @SuppressLint("WrongViewCast")
@@ -77,13 +77,17 @@ class Savings : AppCompatActivity() {
 
             override fun onDataChange(snapshot:DataSnapshot){
                 savingsList.clear()
+                totalSavings=0.0
+
                 if(snapshot.exists()){
                     for(savSnap in snapshot.children){
                         val saveData= savSnap.getValue(SavingsModel::class.java)
                         savingsList.add(saveData!!)
+                        totalSavings+=saveData.amount?.toDouble()?:0.00
                     }
 
                     val mAdapter = SavingsAdapter(savingsList)
+
                     savingsRecyclerView.adapter=mAdapter
 
                     mAdapter.setOnItemClickListener(object :SavingsAdapter.onItemClickListener{
@@ -102,6 +106,8 @@ class Savings : AppCompatActivity() {
 
                     savingsRecyclerView.visibility=View.VISIBLE
                     tvLoadingData.visibility=View.GONE
+                    tvSavingPrice.text = "Rs : $totalSavings"
+
                 }
             }
             override fun onCancelled(error:DatabaseError) {}
