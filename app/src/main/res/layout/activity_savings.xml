@@ -43,23 +43,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pocketpal__4__removebg_preview" />
 
+
     <ImageView
         android:id="@+id/Savingimg"
         android:layout_width="59dp"
         android:layout_height="67dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="@+id/SavingTab"
         app:layout_constraintTop_toTopOf="@+id/SavingTab"
         app:srcCompat="@drawable/savings_11" />
 
-
     <TextView
         android:id="@+id/textSaving"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
         android:text="Savings"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -70,25 +70,13 @@
         android:id="@+id/SavingPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="68dp"
         android:text="Rs.30000"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/Savingimg"
         app:layout_constraintTop_toTopOf="@+id/SavingTab" />
-
-    <Button
-        android:id="@+id/TransferSavings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="11dp"
-        android:text="Transfer To Income"
-        android:textSize="10sp"
-        app:cornerRadius="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textSaving"
-        app:layout_constraintTop_toBottomOf="@+id/SavingPrice" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/savingsRecyclerView"

@@ -100,76 +100,41 @@
         app:layout_constraintStart_toStartOf="@+id/SavingsTab"
         app:layout_constraintTop_toBottomOf="@+id/Savingsimg" />
 
-    <TextView
-        android:id="@+id/IncomePrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="49dp"
-        android:text="Rs.30000"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Incomeimg"
-        app:layout_constraintTop_toTopOf="@+id/IncomeTab" />
-
-    <TextView
-        android:id="@+id/ExpensePrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="38dp"
-        android:text="Rs.13000"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Expenseimg"
-        app:layout_constraintTop_toTopOf="@+id/ExpensesTab" />
-
-    <TextView
-        android:id="@+id/SavingPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        android:text="Rs.17000"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Savingsimg"
-        app:layout_constraintTop_toTopOf="@+id/SavingsTab" />
-
     <Button
         android:id="@+id/ViewExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="67dp"
         android:text="View Details"
         android:textSize="10sp"
         app:cornerRadius="20sp"
         app:layout_constraintStart_toEndOf="@+id/textExpenses"
-        app:layout_constraintTop_toBottomOf="@+id/ExpensePrice" />
+        app:layout_constraintTop_toTopOf="@+id/ExpensesTab" />
 
     <Button
         android:id="@+id/ViewSavings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="67dp"
         android:text="View Details"
         android:textSize="10sp"
         app:cornerRadius="20sp"
         app:layout_constraintStart_toEndOf="@+id/textSavings"
-        app:layout_constraintTop_toBottomOf="@+id/SavingPrice" />
+        app:layout_constraintTop_toTopOf="@+id/SavingsTab" />
 
     <Button
         android:id="@+id/ViewIncome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="67dp"
         android:text="View Details"
         android:textSize="10sp"
         app:cornerRadius="20sp"
         app:layout_constraintStart_toEndOf="@+id/textIncome"
-        app:layout_constraintTop_toBottomOf="@+id/IncomePrice" />
+        app:layout_constraintTop_toTopOf="@+id/IncomeTab" />
 
     <TextView
         android:id="@+id/textView8"

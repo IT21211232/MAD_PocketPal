@@ -22,15 +22,15 @@ import com.google.firebase.database.ValueEventListener
 
 class Savings : AppCompatActivity() {
 
+    /*storing the values from inputs*/
+
     private lateinit var btnInsertData:Button
-    private lateinit var btnTransfer:Button
     private lateinit var savingsRecyclerView:RecyclerView
     private lateinit var tvLoadingData:TextView
     private lateinit var tvSavingPrice:TextView
     private lateinit var savingsList:ArrayList<SavingsModel>
     private lateinit var dbRef:DatabaseReference
-    private lateinit var btnSavUpdate:Button
-    private lateinit var btnSavDelete:Button
+
 
 
     @SuppressLint("WrongViewCast")
@@ -38,8 +38,9 @@ class Savings : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_savings)
 
+        //take elements for grab values
+
         btnInsertData=findViewById(R.id.addsavingbtn)
-        btnTransfer=findViewById(R.id.TransferSavings)
         savingsRecyclerView=findViewById(R.id.savingsRecyclerView)
         savingsRecyclerView.layoutManager=LinearLayoutManager(this)
         savingsRecyclerView.setHasFixedSize(true)
@@ -55,13 +56,6 @@ class Savings : AppCompatActivity() {
 
             val intent = Intent(this,AddSavings::class.java)
             startActivity(intent)
-        }
-
-        btnTransfer.setOnClickListener{
-
-            val intent = Intent(this,TransferIncome::class.java)
-            startActivity(intent)
-
         }
 
     }
@@ -90,7 +84,8 @@ class Savings : AppCompatActivity() {
                         override fun onItemClick(position: Int) {
                             val intent=Intent(this@Savings,UpdateSavings::class.java)
 
-                            //put extras
+                            //
+
                             intent.putExtra("savingId",savingsList[position].savingId)
                             intent.putExtra("savingcategory",savingsList[position].category)
                             intent.putExtra("savingamount",savingsList[position].amount)
